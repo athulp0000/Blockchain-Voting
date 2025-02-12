@@ -1,0 +1,135 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #9ae7c2;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none; /* Removes the underline */
+    color: rgb(11, 40, 7); /* Change to your preferred color */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+}
+
+.vote-section {
+    width: 70%;
+    background: rgb(239, 239, 239);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.vote-section h3 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.vote-section select,
+.vote-section input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.vote-section button {
+    width: 100%;
+    background: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.vote-section button:hover {
+    background: #0056b3;
+}
+
+.voter-list {
+    width: 30%;
+    background: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.voter-list h3 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.voter-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.voter-list li {
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+.buttons {
+    margin: 20px;
+    text-align: center;
+}
+
+.buttons button {
+    background: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+    margin: 5px;
+}
+
+.buttons button:hover {
+    background: #218838;
+}
+
+.results-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+}
+
+.result-detail,
+.result-summary {
+    width: 48%;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background: #007BFF;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
