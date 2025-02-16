@@ -63,11 +63,11 @@ async def index(request: Request):
 async def submit_vote(request: Request, voter_id: str = Form(...), party: str = Form(...)):
     """Handle vote submission."""
     if voter_id not in VOTER_IDS:
-        request.session.setdefault("flash_messages", []).append("❌ Invalid Voter ID! Please select a valid voter ID.")
+        request.session.setdefault("flash_messages", []).append(('error',"❌ Invalid Voter ID! Please select a valid voter ID."))
         return RedirectResponse("/", status_code=303)
 
     if voter_id in vote_check:
-        request.session.setdefault("flash_messages", []).append(f"❌ Voter ID ({voter_id}) has already voted! One vote per ID.")
+        request.session.setdefault("flash_messages", []).append(('error',f"❌ Voter ID ({voter_id}) has already voted! One vote per ID."))
         return RedirectResponse("/", status_code=303)
 
     vote_check.append(voter_id)
@@ -76,7 +76,7 @@ async def submit_vote(request: Request, voter_id: str = Form(...), party: str = 
     async with httpx.AsyncClient() as client:
         await client.post(f"{CONNECTED_SERVICE_ADDRESS}/new_transaction", json=post_object)
 
-    request.session.setdefault("flash_messages", []).append(f"✅ Voted for {party} successfully!")
+    request.session.setdefault("flash_messages", []).append(('success',f"✅ Voted for {party} successfully!"))
     return RedirectResponse("/", status_code=303)
 
 def timestamp_to_string(epoch_time):
