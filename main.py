@@ -204,7 +204,7 @@ def verify_and_add_block(block_data: BlockData):
 def get_pending_tx():
     return blockchain.unconfirmed_transactions
 
-# Run FastAPI locally
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=5000, reload=True)
+# # Run FastAPI locally
+# if __name__ == "__main__":
+#     import uvicorn
+#     uvicorn.run(app, host="127.0.0.1", port=5000, reload=True)
